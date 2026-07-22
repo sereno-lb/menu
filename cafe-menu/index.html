@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="google-site-verification"
+            content="google4fcf4c6dfe03cd70" />
+
+        <title>Sereno Park, Pool & Café</title>
+
+        <meta name="description" content="Sereno Park, Pool & Café Menu" />
+        <link
+            rel="canonical"
+            href="https://sereno-lb.github.io/menu/cafe-menu/" />
+        <link rel="icon" type="image/png" href="favicon.png" />
+
+        <link rel="stylesheet" href="css/default.css" />
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-XNQ6TXQ0K0"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-XNQ6TXQ0K0');
+        </script>
+    </head>
+
+    <body>
+        <header class="hero">
+            <div class="hero__content">
+                <h1 class="hero__title">SERENO</h1>
+
+                <img
+                    class="hero__arabic-title"
+                    src="img/title-Arabic.png"
+                    alt="منتزه الرواق" />
+
+                <p class="hero__subtitle">Park, Pool & Café</p>
+
+                <div class="hero__divider">
+                    <!--
+                        Leaf icon: Lucide Icons (lucide.dev), Apache 2.0 license.
+                        Paths designed for 24x24. Translated to sit at center of a 120x26 viewBox.
+                    -->
+                    <svg
+                        class="hero__divider-svg"
+                        viewBox="0 0 120 26"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <line
+                            x1="0"
+                            y1="13"
+                            x2="52"
+                            y2="13"
+                            stroke="currentColor"
+                            stroke-width="1" />
+                        <g
+                            transform="translate(54, 6.5) scale(0.5)"
+                            stroke="currentColor"
+                            stroke-width="1.75"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path
+                                d="M11 20A7 7 0 0 1 9.8 6.1C15.25 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
+                            <path d="M2 21c0-3 1.85-5.36 5.08-6" />
+                        </g>
+                        <line
+                            x1="68"
+                            y1="13"
+                            x2="120"
+                            y2="13"
+                            stroke="currentColor"
+                            stroke-width="1" />
+                    </svg>
+                </div>
+            </div>
+        </header>
+
+        <div id="promo-card" class="promo-card">
+            <!-- Dismiss / Close Button -->
+            <button
+                id="promo-dismiss-btn"
+                class="promo-close-btn"
+                aria-label="Close promotion">
+                &times;
+            </button>
+
+            <div class="promo-header">
+                <span class="promo-tag">Special Offer</span>
+                <h2>Drink on Us!</h2>
+                <p class="promo-sub">
+                    4 quick steps to claim your free soft or hot drink:
+                </p>
+            </div>
+
+            <ul class="promo-steps">
+                <li>
+                    <span class="step-num">1</span>
+                    <span
+                        ><a
+                            href="https://g.page/r/CWM9u1jWttiyEBM/review"
+                            target="_blank"
+                            rel="noopener"
+                            >Post a 5★ review on Google Maps</a
+                        ></span
+                    >
+                </li>
+                <li>
+                    <span class="step-num">2</span>
+                    <span
+                        ><a
+                            href="https://instagram.com/sereno.park"
+                            target="_blank"
+                            rel="noopener"
+                            >Follow @sereno.park on Instagram</a
+                        ></span
+                    >
+                </li>
+                <li>
+                    <span class="step-num">3</span>
+                    <span>Mention us in an Instagram story</span>
+                </li>
+                <li>
+                    <span class="step-num">4</span>
+                    <span>Show this to your server & enjoy! 🎉</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="search-container">
+            <div class="search-box">
+                <svg
+                    class="search-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input
+                    type="text"
+                    id="menu-search"
+                    class="search-input"
+                    placeholder="Search menu..."
+                    aria-label="Search menu items" />
+                <button
+                    type="button"
+                    id="search-clear"
+                    class="search-clear"
+                    aria-label="Clear search"
+                    hidden>
+                    &times;
+                </button>
+            </div>
+            <div
+                id="search-results-info"
+                class="search-results-info"
+                hidden></div>
+        </div>
+
+        <nav id="menu-nav" class="menu-nav" aria-label="Menu Sections">
+            <div id="menu-nav-list" class="menu-nav__list">
+                <!-- Generated by JavaScript -->
+            </div>
+        </nav>
+
+        <main id="menu" class="menu" aria-live="polite">
+            <div class="loading">Loading menu...</div>
+        </main>
+
+        <div class="disclaimer-container">
+            <p id="footer-text" class="disclaimer-pill"></p>
+        </div>
+
+        <footer class="footer">
+            <div class="footer__divider"></div>
+            <div class="footer__links">
+                <a
+                    href="https://serenopark.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="footer__link">
+                    <svg
+                        class="footer__icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span>serenopark.com</span>
+                </a>
+                <a
+                    href="https://wa.me/+96176842956"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="footer__link">
+                    <svg
+                        class="footer__icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                    <span>WhatsApp</span>
+                </a>
+                <a
+                    href="https://instagram.com/sereno.park"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="footer__link">
+                    <svg
+                        class="footer__icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect
+                            x="2"
+                            y="2"
+                            width="20"
+                            height="20"
+                            rx="5"
+                            ry="5"></rect>
+                        <path
+                            d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+                <a
+                    href="https://tiktok.com/@sereno.park"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="footer__link">
+                    <svg
+                        class="footer__icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                    </svg>
+                    <span>TikTok</span>
+                </a>
+            </div>
+        </footer>
+
+        <template id="section-template">
+            <section class="menu-section">
+                <header class="menu-section__header">
+                    <div class="menu-section__icon-container">
+                        <!-- SVG loaded dynamically -->
+                    </div>
+                    <h2 class="menu-section__title"></h2>
+                    <div class="menu-section__line"></div>
+                </header>
+
+                <div class="menu-items"></div>
+            </section>
+        </template>
+
+        <template id="item-template">
+            <article class="menu-item">
+                <div class="menu-item__header">
+                    <h3 class="menu-item__name"></h3>
+                    <div class="menu-item__dots"></div>
+                    <div class="menu-item__price"></div>
+                </div>
+                <p class="menu-item__description"></p>
+            </article>
+        </template>
+
+        <div id="cookie-consent-banner" class="cookie-banner">
+            <div class="cookie-content">
+                <p>
+                    We use cookies and
+                    <a
+                        href="https://policies.google.com/technologies/partner-sites"
+                        >Google Analytics</a
+                    >
+                    to improve your experience and analyze site traffic. By
+                    using this site, you consent to our use of analytics.
+                </p>
+                <div class="cookie-actions">
+                    <button id="cookie-accept-btn" class="cookie-btn">
+                        Accept
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/menu.js"></script>
+        <script src="js/promotions.js"></script>
+        <script src="js/main.js" defer></script>
+    </body>
+</html>

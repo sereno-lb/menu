@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Sereno Park & Café | Menu</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="google-site-verification"
+            content="google4fcf4c6dfe03cd70" />
+        <link rel="canonical" href="https://sereno-lb.github.io/menu/" />
+        <link rel="icon" type="image/png" href="cafe-menu/img/favicon.png" />
+        <script>
+            window.location.replace(redirectToMenu(window.location.href));
+
+            function redirectToMenu(urlString) {
+                const url = new URL(urlString);
+
+                if (
+                    url.protocol === 'file:' &&
+                    url.pathname.endsWith('/index.html')
+                ) {
+                    url.pathname = url.pathname.replace(
+                        '/index.html',
+                        '/cafe-menu/index.html'
+                    );
+                } else if (url.pathname.endsWith('/index.html')) {
+                    url.pathname = url.pathname.replace(
+                        '/index.html',
+                        '/cafe-menu'
+                    );
+                } else {
+                    url.pathname = url.pathname.replace(/\/?$/, '/cafe-menu');
+                }
+
+                return url.href;
+            }
+        </script>
+    </head>
+
+    <body>
+        Loading menu...
+        <p>
+            If you are not redirected automatically,
+            <a id="redirect-link" href="/menu/cafe-menu"
+                >click here to view the menu</a
+            >.
+        </p>
+    </body>
+</html>

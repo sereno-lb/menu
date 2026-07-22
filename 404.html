@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="noindex, follow" />
+        <title>Page Not Found | Sereno Park & Café</title>
+        <link rel="icon" type="image/png" href="/cafe-menu/favicon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+            rel="stylesheet" />
+        <style>
+            :root {
+                --color-primary: #3d503e;
+                --color-primary-dark: #2a382b;
+                --color-primary-light: #eef3ed;
+                --color-accent: #c4996c;
+                --color-accent-hover: #b08457;
+                --color-background: #faf8f5;
+                --color-surface: #ffffff;
+                --color-text: #2a2e29;
+                --color-text-light: #6a7468;
+                --color-border: #d4ded3;
+
+                --font-title: 'Cormorant Garamond', serif;
+                --font-body: 'Plus Jakarta Sans', sans-serif;
+
+                --radius-md: 16px;
+                --radius-lg: 30px;
+
+                --shadow-card: 0 10px 30px rgba(61, 80, 62, 0.08);
+            }
+
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: var(--font-body);
+                background-color: var(--color-background);
+                color: var(--color-text);
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 24px;
+                text-align: center;
+                line-height: 1.6;
+            }
+
+            .container {
+                background: var(--color-surface);
+                border: 1px solid var(--color-border);
+                border-radius: var(--radius-md);
+                padding: 48px 32px;
+                max-width: 520px;
+                width: 100%;
+                box-shadow: var(--shadow-card);
+                animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(12px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .brand {
+                font-family: var(--font-title);
+                font-size: 1.75rem;
+                letter-spacing: 0.15em;
+                color: var(--color-primary);
+                font-weight: 600;
+                text-transform: uppercase;
+                margin-bottom: 4px;
+            }
+
+            .error-code {
+                font-family: var(--font-title);
+                font-size: 5.5rem;
+                font-weight: 700;
+                color: var(--color-accent);
+                line-height: 1;
+                margin: 16px 0 8px;
+            }
+
+            .error-title {
+                font-family: var(--font-title);
+                font-size: 1.75rem;
+                font-weight: 600;
+                color: var(--color-primary-dark);
+                margin-bottom: 12px;
+            }
+
+            .divider {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 20px 0;
+            }
+
+            .divider-svg {
+                width: 120px;
+                height: 26px;
+                color: var(--color-accent);
+            }
+
+            .description {
+                color: var(--color-text-light);
+                font-size: 1rem;
+                margin-bottom: 28px;
+            }
+
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                background-color: var(--color-primary);
+                color: #ffffff;
+                font-family: var(--font-body);
+                font-size: 1rem;
+                font-weight: 600;
+                padding: 14px 28px;
+                border-radius: var(--radius-lg);
+                text-decoration: none;
+                transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 0 4px 14px rgba(61, 80, 62, 0.2);
+            }
+
+            .btn:hover {
+                background-color: var(--color-primary-dark);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(61, 80, 62, 0.3);
+            }
+
+            .btn:active {
+                transform: translateY(0);
+            }
+
+            .redirect-note {
+                margin-top: 24px;
+                font-size: 0.875rem;
+                color: var(--color-text-light);
+            }
+
+            .timer {
+                font-weight: 600;
+                color: var(--color-accent);
+            }
+        </style>
+    </head>
+
+    <body>
+        <main class="container">
+            <div class="brand">Sereno</div>
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+
+            <div class="divider">
+                <svg
+                    class="divider-svg"
+                    viewBox="0 0 120 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <line
+                        x1="0"
+                        y1="13"
+                        x2="52"
+                        y2="13"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-dasharray="2 2" />
+                    <path
+                        d="M60 7C57 11 54 13 54 16C54 18.2 55.8 20 58 20C60.2 20 62 18.2 62 16C62 13 59 11 60 7Z"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <line
+                        x1="68"
+                        y1="13"
+                        x2="120"
+                        y2="13"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-dasharray="2 2" />
+                </svg>
+            </div>
+
+            <p class="description">
+                The page you are looking for doesn't exist.
+            </p>
+
+            <a
+                id="redirect-link"
+                class="btn"
+                href="https://sereno-lb.github.io/menu/cafe-menu">
+                Go to Menu &rarr;
+            </a>
+
+            <p class="redirect-note">
+                Redirecting automatically in
+                <span id="countdown" class="timer">5</span> seconds...
+            </p>
+        </main>
+
+        <script>
+            (function () {
+                var targetUrl = 'https://sereno-lb.github.io/menu/cafe-menu';
+                var secondsLeft = 5;
+                var countdownEl = document.getElementById('countdown');
+
+                var interval = setInterval(function () {
+                    secondsLeft -= 1;
+                    if (countdownEl) {
+                        countdownEl.textContent = secondsLeft;
+                    }
+                    if (secondsLeft <= 0) {
+                        clearInterval(interval);
+                        window.location.replace(targetUrl);
+                    }
+                }, 1000);
+            })();
+        </script>
+    </body>
+</html>

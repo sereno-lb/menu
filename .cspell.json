@@ -1,0 +1,53 @@
+{
+    "version": "0.2",
+    "language": "en",
+    "words": [
+        "Argileh",
+        "Batata",
+        "Dolsi",
+        "Fajita",
+        "hookah",
+        "Hummus",
+        "Maccaw",
+        "Maté",
+        "Mortadella",
+        "Nescafé",
+        "Sereno",
+        "sereno-lb",
+        "serenopark",
+        "shisha",
+        "Tawouk",
+        "toum",
+        "zaatar"
+    ],
+    "dictionaryDefinitions": [
+        {
+            "name": "html-words",
+            "words": ["dataLayer", "gtag", "Lucide", "viewBox"]
+        },
+        {
+            "name": "js-words",
+            "words": ["dataLayer", "gtag"]
+        },
+        {
+            "name": "css-words",
+            "words": ["Cormorant", "Garamond"]
+        }
+    ],
+    "overrides": [
+        {
+            "filename": "**/*.html",
+            "dictionaries": ["html-words"]
+        },
+        {
+            "filename": "**/*.js",
+            "dictionaries": ["js-words"]
+        },
+        {
+            "filename": "**/*.css",
+            "dictionaries": ["css-words"]
+        }
+    ],
+    "ignoreRegExpList": ["[\\u0600-\\u06FF]+"],
+    "ignorePaths": [".git/**", "cafe-menu/img/**", "*.png", "*.jpg", "*.ico"]
+}
