@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --color-primary: #3d503e;
+    /* Serene forest sage */
+    --color-primary-dark: #2a382b;
+    /* Deep dark olive */
+    --color-primary-light: #eef3ed;
+    /* Light sage accent */
+    --color-accent: #c4996c;
+    /* Warm latte gold */
+    --color-background: #faf8f5;
+    /* Serene cream paper background */
+    --color-surface: #ffffff;
+
+    --color-text: #2a2e29;
+    /* Charcoal text with olive tint */
+    --color-text-light: #6a7468;
+    /* Sage grey for descriptions */
+    --color-border: #d4ded3;
+    /* Soft border line */
+
+    --font-title: 'Playfair Display', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 30px;
+
+    --transition-fast: 150ms ease;
+    --transition-smooth: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    --content-width: 900px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Adjust for floating navigation pill + margin */
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background: var(--color-background);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Base custom interactive styles */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Organic Background Details - Pure CSS vector decoration */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(61, 80, 62, 0.02) 0%,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(196, 153, 108, 0.03) 0%,
+            transparent 50%
+        );
+    pointer-events: none;
+}
+
+/* Hero Header */
+.hero {
+    padding: clamp(4rem, 10vw, 7rem) 1.5rem clamp(2rem, 5vw, 4rem);
+    text-align: center;
+    background: transparent;
+}
+
+.hero__content {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero__title {
+    margin: 0;
+    font-family: var(--font-title);
+    font-size: clamp(3.5rem, 9vw, 5.5rem);
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--color-primary);
+    line-height: 1.1;
+    animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero__subtitle {
+    margin-top: 0.75rem;
+    font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 500;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.hero__divider {
+    margin-top: 0.1rem;
+    width: 160px;
+    color: var(--color-accent);
+    animation: scaleUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero__divider-svg {
+    width: 100%;
+    height: auto;
+}
+
+/* Floating Glass Navigation Pill */
+.menu-nav {
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+    /* No max-width — the pill sizes itself to content */
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-nav__list {
+    display: flex;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.45rem;
+    border-radius: var(--radius-lg);
+    background: rgba(250, 248, 245, 0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(61, 80, 62, 0.08);
+    box-shadow:
+        0 12px 30px rgba(42, 46, 41, 0.04),
+        0 4px 10px rgba(42, 46, 41, 0.02);
+    /* Pill sizes to its content — scrolls on very small screens */
+    width: fit-content;
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.menu-nav__list::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-nav__link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    padding: 0.55rem 1.1rem;
+    border-radius: var(--radius-lg);
+    font-weight: 500;
+    font-size: 0.88rem;
+    color: var(--color-primary);
+    transition: all var(--transition-smooth);
+}
+
+.menu-nav__link:hover {
+    background: rgba(61, 80, 62, 0.05);
+    color: var(--color-primary-dark);
+}
+
+.menu-nav__link.active {
+    background: var(--color-primary);
+    color: var(--color-background);
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(61, 80, 62, 0.15);
+}
+
+.menu-nav__icon {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-nav__icon svg {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    flex-shrink: 0;
+    stroke: currentColor;
+    display: block;
+    overflow: visible;
+}
+
+/* Main Menu Layout */
+.menu {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+}
+
+/* Single-column layout — sections always stack vertically */
+#menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.loading {
+    text-align: center;
+    color: var(--color-text-light);
+    padding: 5rem 0;
+    font-weight: 500;
+}
+
+/* Menu Sections */
+.menu-section {
+    background: transparent;
+    padding: 1rem 0;
+    scroll-margin-top: 110px;
+}
+
+.menu-section__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.menu-section__icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--color-primary-light);
+    flex-shrink: 0;
+    border: 1px solid rgba(61, 80, 62, 0.06);
+    box-shadow: 0 4px 10px rgba(61, 80, 62, 0.03);
+    color: var(--color-primary-dark);
+}
+
+.menu-section__icon-container svg {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    stroke: currentColor;
+    display: block;
+    overflow: visible;
+}
+
+.menu-section__title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-primary-dark);
+    white-space: nowrap;
+}
+
+.menu-section__line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--color-border);
+}
+
+.menu-items {
+    display: grid;
+    gap: 1.25rem;
+}
+
+/* Menu Item Design */
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    transition: transform var(--transition-smooth);
+}
+
+.menu-item:hover {
+    transform: translateX(4px);
+}
+
+.menu-item__header {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+}
+
+.menu-item__name {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    white-space: nowrap;
+}
+
+.menu-item__dots {
+    flex-grow: 1;
+    border-bottom: 1.5px dotted var(--color-border);
+    margin: 0 0.6rem;
+    height: 1px;
+    align-self: flex-end;
+    position: relative;
+    top: -4px;
+}
+
+.menu-item__price {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    white-space: nowrap;
+}
+
+.menu-item__description {
+    margin: 0.25rem 0 0;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.menu-item__description:empty {
+    display: none;
+}
+
+/* Footer disclaimer */
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1.5rem 5rem;
+    background: transparent;
+}
+
+#footer-text {
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+    padding: 0.5rem 1.75rem;
+    font-size: 0.85rem;
+    color: var(--color-primary-dark);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin: 0;
+    background: rgba(250, 248, 245, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+}
+
+/* Keyframe Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(15px);
+    animation: itemFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes itemFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 640px) {
+    .menu {
+        padding: 2rem 1.25rem 5rem;
+    }
+
+    .hero {
+        padding: 4rem 1rem 2rem;
+    }
+
+    .menu-nav {
+        top: 15px;
+        /* Keep the sticky wrapper overflow-clean — never put overflow on a sticky element */
+        justify-content: flex-start !important;
+        padding: 0 0.75rem;
+    }
+
+    .menu-nav__list {
+        /* Full-width pill on mobile, scroll starts from left */
+        width: 100%;
+        justify-content: flex-start !important;
+        overflow-x: auto;
+    }
+
+    .menu-nav__link {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.82rem;
+        gap: 0.35rem;
+    }
+
+    .menu-item__name {
+        font-size: 0.98rem;
+        white-space: normal;
+        line-height: 1.3;
+    }
+
+    .menu-item__price {
+        font-size: 0.98rem;
+    }
+
+    .menu-item__dots {
+        margin: 0 0.4rem;
+    }
+
+    .menu-section__header {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Collapse the dot leaders if screen space is too tight */
+    .menu-item__header {
+        flex-wrap: wrap;
+        gap: 0.15rem;
+    }
+
+    .menu-item__dots {
+        display: none;
+    }
+
+    .menu-item__price {
+        margin-left: auto;
+    }
+
+    .menu-item__name {
+        width: 100%;
+        margin-bottom: 0.15rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* .fade-in sets opacity:0 and relies on an animation to restore it.
+       When animations are disabled we must reset opacity manually or
+       sections 2-4 will be permanently invisible. */
+    .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
